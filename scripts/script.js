@@ -124,11 +124,35 @@ const results = (buttonNodeContent, x, y, z) => {
             display(result);
         } else {
             display(+result.toFixed(5));
-        }
+        };
         firstNum = result;
         operator = undefined;
         secondNum = undefined;
         moreOperatorsTally = 1;
+    } else if (buttonNodeContent === '+' && firstNum !== undefined && operator !== undefined && secondNum !== undefined && (moreOperatorsTally === 1 || moreOperatorsTally === 0)
+    || buttonNodeContent === '-' && firstNum !== undefined && operator !== undefined && secondNum !== undefined && (moreOperatorsTally === 1 || moreOperatorsTally === 0)
+    || buttonNodeContent === '*' && firstNum !== undefined && operator !== undefined && secondNum !== undefined && (moreOperatorsTally === 1 || moreOperatorsTally === 0)
+    || buttonNodeContent === '/' && firstNum !== undefined && operator !== undefined && secondNum !== undefined && (moreOperatorsTally === 1 || moreOperatorsTally === 0)) {
+        let result = operate(x, y, z);
+        if (Number.isInteger(result)) {
+            display(result);
+        } else {
+            display(+result.toFixed(5));
+        };
+        firstNum = result;
+        if (buttonNodeContent == '+') {
+            operator = 'plus';
+        } else if (buttonNodeContent == '-') {
+            operator = 'minus';
+        } else if (buttonNodeContent == '*') {
+            operator = 'times';
+        } else if (buttonNodeContent == '/') {
+            operator = 'divide';
+        };
+        secondNum = undefined;
+        if (moreOperatorsTally === 1) {
+            moreOperatorsTally = 0;
+        }; 
     };
 };
 
