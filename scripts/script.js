@@ -110,3 +110,9 @@ const secondNumGenerator = (buttonNodeContent) => {
         return display(secondNum);
     };
 };
+
+const dividedByZero = (buttonNodeContent) => {
+    if (firstNum == 0 && operator === 'divide' && buttonNodeContent !== 'C' || secondNum == 0 && operator === 'divide' && buttonNodeContent !== 'C' ) {
+        displayer.textContent = "You can't divide by zero.";
+    };
+};
