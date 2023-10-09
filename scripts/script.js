@@ -67,3 +67,46 @@ const whenZeroInitial = (buttonNodeContent) => {
         return display(firstNum);
     };
 };
+
+const firstNumGenerator = (buttonNodeContent) => {
+    if (firstNum == 0 && !isNaN(buttonNodeContent) && operator === undefined) {
+        firstNum = buttonNodeContent;
+        return display(firstNum);
+    } else if (operator == undefined && !isNaN(buttonNodeContent) && moreOperatorsTally !== 1) {
+        firstNum += buttonNodeContent;
+        return display(firstNum);
+    };
+};
+
+const operatorGenerator = (buttonNodeContent) => {
+    if (operator == undefined && isNaN(buttonNodeContent)) {
+        if (buttonNodeContent === '+') {
+            operator = 'plus';
+            return operator;
+        } else if (buttonNodeContent === '-') {
+            operator = 'minus';
+        } else if (buttonNodeContent === '*') {
+            operator = 'times';
+        } else if (buttonNodeContent === '/') {
+            operator = 'divide';
+        } else {
+            return 'oopsie';
+        };
+    };
+};
+
+const secondNumGenerator = (buttonNodeContent) => {
+    if (operator !== undefined && secondNum === undefined && !isNaN(buttonNodeContent) && moreOperatorsTally !== 1) {
+        secondNum = buttonNodeContent;
+        return display(secondNum);
+    } else if (operator !== undefined && !isNaN(buttonNodeContent) && moreOperatorsTally !== 1) {
+        secondNum += buttonNodeContent;
+        return display(secondNum);
+    } else if (operator !== undefined && secondNum === undefined && !isNaN(buttonNodeContent) && moreOperatorsTally == 1) {
+        secondNum = buttonNodeContent;
+        return display(secondNum);
+    } else if (operator !== undefined && !isNaN(buttonNodeContent) && moreOperatorsTally === 1) {
+        secondNum += buttonNodeContent;
+        return display(secondNum);
+    };
+};
