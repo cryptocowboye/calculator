@@ -132,3 +132,20 @@ const results = (buttonNodeContent, x, y, z) => {
     };
 };
 
+const calculator = () => {
+    let buttons = document.querySelectorAll(".num");
+    buttons.forEach((buttonNode) => {
+        buttonNode.addEventListener("click", () => {
+            clear(buttonNode.textContent);
+            whenZeroInitial(buttonNode.textContent);
+            firstNumGenerator(buttonNode.textContent);
+            operatorGenerator(buttonNode.textContent);
+            secondNumGenerator(buttonNode.textContent);
+            dividedByZero(buttonNode.textContent);
+            results(buttonNode.textContent, firstNum, operator, secondNum);
+        });
+    });
+};
+
+calculator();
+
