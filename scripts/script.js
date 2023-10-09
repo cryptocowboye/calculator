@@ -57,3 +57,13 @@ const clear = (buttonNodeContent) => {
         return displayer.textContent;
     };
 };
+
+const whenZeroInitial = (buttonNodeContent) => {
+    if (firstNum === undefined && displayer.textContent == 0) {
+        firstNum = 0;
+        return display(firstNum);
+    } else if (firstNum == undefined && buttonNodeContent == 0) {
+        firstNum = 0;
+        return display(firstNum);
+    };
+};
