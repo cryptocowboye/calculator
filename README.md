@@ -1,1 +1,3 @@
-# calculator
+Before project work:
+
+Now, I must admit, I went ahead and jumped the shark and started this project early on my local machine. The calculator functionality works in a satisfactory manner (or at least, it fits the Odin Project's guidelines for this project). At time of writing, the calculator's CSS could be much improved, but I'm quite happy with the javascript code, and the overall structure of the project. The HTML was quite simple, the CSS is as good as it gets at my current level, but the Javascript was an absolute behemoth to get my mind around. I was originally going to put the conditionals in one function call; however, it became extremely cumbersome and confusing, so I added different functions to delegate responsibility for a button click (to which, I consider them as a check list per button click). Of course, there are some bugs at this point and time of my Javascript journey; but dare I say, I'm quite proud of where I've progressed!
