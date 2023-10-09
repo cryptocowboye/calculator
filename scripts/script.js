@@ -116,3 +116,19 @@ const dividedByZero = (buttonNodeContent) => {
         displayer.textContent = "You can't divide by zero.";
     };
 };
+
+const results = (buttonNodeContent, x, y, z) => {
+    if (buttonNodeContent === '=' && firstNum !== undefined && operator !== undefined && secondNum !== undefined) {
+        let result = operate(x, y, z);
+        if (Number.isInteger(result)) {
+            display(result);
+        } else {
+            display(+result.toFixed(5));
+        }
+        firstNum = result;
+        operator = undefined;
+        secondNum = undefined;
+        moreOperatorsTally = 1;
+    };
+};
+
