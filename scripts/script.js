@@ -35,6 +35,25 @@ const displayer = document.querySelector(".display");
 displayer.textContent = 0;
 
 const display = (buttonNodeContent) => {
-    displayer.textContent = buttonNodeContent
-    return displayer.textContent
+    displayer.textContent = buttonNodeContent;
+    return displayer.textContent;
+};
+
+const clear = (buttonNodeContent) => {
+    if (buttonNodeContent == 'C') {
+        displayer.textContent = 0;
+        firstNum = undefined;
+        operator = undefined;
+        secondNum = undefined;
+        moreOperatorsTally = 0;
+        return displayer.textContent;
+    };
+    if (displayer.textContent == "You can't divide by zero.") {
+        displayer.textContent = 0;
+        firstNum = undefined;
+        operator = undefined;
+        secondNum = undefined;
+        moreOperatorsTally = 0;
+        return displayer.textContent;
+    };
 };
