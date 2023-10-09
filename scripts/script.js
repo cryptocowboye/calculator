@@ -30,3 +30,11 @@ const operate = (x, y, z) => {
         return divide(x, z);
     };
 };
+
+const displayer = document.querySelector(".display");
+displayer.textContent = 0;
+
+const display = (buttonNodeContent) => {
+    displayer.textContent = buttonNodeContent
+    return displayer.textContent
+};
