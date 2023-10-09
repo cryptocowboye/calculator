@@ -18,3 +18,15 @@ let firstNum = undefined;
 let operator = undefined;
 let secondNum = undefined;
 let moreOperatorsTally = 0; // This keeps tabs on whether or not there are more than 2 operators in the expression.
+
+const operate = (x, y, z) => {
+    if (y === 'plus') {
+        return add(x, z);
+    } else if (y === 'minus') {
+        return subtract(x, z);
+    } else if (y === 'times') {
+        return multiply(x, z);
+    } else if (y === 'divide') {
+        return divide(x, z);
+    };
+};
